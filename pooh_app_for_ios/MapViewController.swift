@@ -48,8 +48,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var theRoppongiAnnotation = MKPointAnnotation()
         theRoppongiAnnotation.coordinate  = mapPoint
-        theRoppongiAnnotation.title       = "ピン置いたぜぇ〜"
-        theRoppongiAnnotation.subtitle    = "ワイルドだろぅ〜？"
+        theRoppongiAnnotation.title       = "あいむうんこなう"
+        theRoppongiAnnotation.subtitle    = "ぶりぶり"
         self.mapView.addAnnotation(theRoppongiAnnotation)
     }
 

@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //FirstViewControllerをRootViewに設定する
+        var fvc = MapViewController(nibName:nil,bundle:nil);
+        self.window!.rootViewController = fvc;
+        
         return true
     }
 

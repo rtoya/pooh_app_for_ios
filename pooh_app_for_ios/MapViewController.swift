@@ -1,17 +1,9 @@
-//
-//  MapViewController.swift
-//  pooh_app_for_ios
-//
-//  Created by Toya on 2014/09/27.
-//  Copyright (c) 2014年 Toya. All rights reserved.
-//
-
 import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
-    // マップ
+    // 地図関連 下のmapViewをMapKitViewと紐付ける
     var mapView: MKMapView = MKMapView()
     
     // 長押しでピン立てできる

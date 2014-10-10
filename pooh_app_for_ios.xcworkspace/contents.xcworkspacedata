@@ -4,4 +4,7 @@
    <FileRef
       location = "group:pooh_app_for_ios.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

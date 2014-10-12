@@ -14,12 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        //Override point for customization after application launch.
-        
-        //FirstViewControllerをRootViewに設定する
-        var fvc = ViewController(nibName:nil,bundle:nil);
-        self.window!.rootViewController = fvc;
-        
+        //Override point for customization after application launch.  
+        //self.window?.rootViewController = ViewController(nibName: "ViewController", bundle: nil)
+
         return true
     }
     
@@ -47,4 +44,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

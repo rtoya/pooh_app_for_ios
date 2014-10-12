@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //self.window?.rootViewController = ViewController(nibName: "ViewController", bundle: nil)
 
         return true
+
     }
     
     func applicationWillResignActive(application: UIApplication) {

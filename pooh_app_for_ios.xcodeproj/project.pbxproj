@@ -16,7 +16,7 @@
 		B25E475919CB246A00846746 /* pooh_app_for_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E475819CB246A00846746 /* pooh_app_for_iosTests.swift */; };
 		B2F86FF519D6AEAA00963785 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F86FF419D6AEAA00963785 /* MapViewController.swift */; };
 		B2F86FF719D6AF4F00963785 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F86FF619D6AF4F00963785 /* MapKit.framework */; };
-		C0802F5119CF2AAC0076E3AA /* images in Resources */ = {isa = PBXBuildFile; fileRef = C0802F5019CF2AAC0076E3AA /* images */; };
+		DFDAFB0819EAB76E0015540D /* images in Resources */ = {isa = PBXBuildFile; fileRef = C0802F5019CF2AAC0076E3AA /* images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,7 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0802F5119CF2AAC0076E3AA /* images in Resources */,
+				DFDAFB0819EAB76E0015540D /* images in Resources */,
 				B25E474819CB246A00846746 /* Main.storyboard in Resources */,
 				B25E474D19CB246A00846746 /* LaunchScreen.xib in Resources */,
 				B25E474A19CB246A00846746 /* Images.xcassets in Resources */,

@@ -40,6 +40,8 @@
 		DF49417B19EAD862008C67C2 /* login_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49417819EAD862008C67C2 /* login_btn.png */; };
 		DF49417C19EAD862008C67C2 /* login_ttl.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49417919EAD862008C67C2 /* login_ttl.png */; };
 		DF49417D19EAD862008C67C2 /* login_ttl.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49417919EAD862008C67C2 /* login_ttl.png */; };
+		DF49418A19EB205C008C67C2 /* header_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49418819EB205C008C67C2 /* header_menu.png */; };
+		DF49418B19EB205C008C67C2 /* main_start.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49418919EB205C008C67C2 /* main_start.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		DF49416319EACA6F008C67C2 /* top_ttl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_ttl.png; sourceTree = "<group>"; };
 		DF49417819EAD862008C67C2 /* login_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn.png; sourceTree = "<group>"; };
 		DF49417919EAD862008C67C2 /* login_ttl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_ttl.png; sourceTree = "<group>"; };
+		DF49418819EB205C008C67C2 /* header_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_menu.png; sourceTree = "<group>"; };
+		DF49418919EB205C008C67C2 /* main_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_start.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 		DF49415919EACA6F008C67C2 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DF49418819EB205C008C67C2 /* header_menu.png */,
+				DF49418919EB205C008C67C2 /* main_start.png */,
 				DF49417819EAD862008C67C2 /* login_btn.png */,
 				DF49417919EAD862008C67C2 /* login_ttl.png */,
 				DF49415A19EACA6F008C67C2 /* background.png */,
@@ -285,6 +291,7 @@
 				DF49417419EACA6F008C67C2 /* top_start.png in Resources */,
 				DF49416C19EACA6F008C67C2 /* top_bg.png in Resources */,
 				B25E474819CB246A00846746 /* Main.storyboard in Resources */,
+				DF49418B19EB205C008C67C2 /* main_start.png in Resources */,
 				DF49417019EACA6F008C67C2 /* top_discription.png in Resources */,
 				DF49416819EACA6F008C67C2 /* create_acc.png in Resources */,
 				DF49416A19EACA6F008C67C2 /* create_ttl.png in Resources */,
@@ -296,6 +303,7 @@
 				DF49416E19EACA6F008C67C2 /* top_create.png in Resources */,
 				B25E474A19CB246A00846746 /* Images.xcassets in Resources */,
 				DF49417219EACA6F008C67C2 /* top_slide.png in Resources */,
+				DF49418A19EB205C008C67C2 /* header_menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

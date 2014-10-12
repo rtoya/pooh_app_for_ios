@@ -29,6 +29,9 @@
                                 <state key="normal" image="top_create.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Hcq-Pa-Kri" kind="show" id="CQ8-TB-N6T"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_ttl.png" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-gw-5r5">
                                 <rect key="frame" x="252" y="510" width="169" height="23"/>
@@ -118,7 +121,7 @@
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ygE-Yo-Rgd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="5aP-GN-Yqv"/>
                             <constraint firstItem="F1w-gw-5r5" firstAttribute="top" secondItem="oYo-pB-M19" secondAttribute="bottom" constant="200" id="7Yi-BW-XaZ"/>
@@ -196,16 +199,10 @@
                         <viewControllerLayoutGuide type="top" id="xWY-X6-EMR"/>
                         <viewControllerLayoutGuide type="bottom" id="AkN-k3-xVz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Kz9-B6-Gne">
+                    <view key="view" contentMode="scaleToFill" id="Kz9-B6-Gne" customClass="Acc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザー登録" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlb-Yn-hmX">
-                                <rect key="frame" x="249" y="51" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFt-5l-1va">
                                 <rect key="frame" x="249" y="307" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -284,13 +281,59 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_ttl.png" translatesAutoresizingMaskIntoConstraints="NO" id="7sw-KN-KCN">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7sw-KN-KCN" secondAttribute="height" multiplier="548:25" id="Lle-Tt-Ewi"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Lle-Tt-Ewi"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Lle-Tt-Ewi"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7sw-KN-KCN" firstAttribute="leading" secondItem="Kz9-B6-Gne" secondAttribute="leadingMargin" id="5so-iS-pxd"/>
+                            <constraint firstAttribute="centerX" secondItem="7sw-KN-KCN" secondAttribute="centerX" id="IV8-yr-Tdh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7sw-KN-KCN" secondAttribute="trailing" id="TMP-hK-hfE"/>
+                            <constraint firstItem="7sw-KN-KCN" firstAttribute="top" secondItem="Kz9-B6-Gne" secondAttribute="topMargin" constant="40" id="bIG-YS-o8r">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7sw-KN-KCN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5so-iS-pxd"/>
+                                <exclude reference="IV8-yr-Tdh"/>
+                                <exclude reference="TMP-hK-hfE"/>
+                                <exclude reference="bIG-YS-o8r"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7sw-KN-KCN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5so-iS-pxd"/>
+                                <include reference="IV8-yr-Tdh"/>
+                                <include reference="TMP-hK-hfE"/>
+                                <include reference="bIG-YS-o8r"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsO-o7-POD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="465.74999999999994"/>
+            <point key="canvasLocation" x="-138" y="-179"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="z8u-aD-cp2">
@@ -492,6 +535,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="create_ttl.png" width="548" height="25"/>
         <image name="top_create.png" width="548" height="56"/>
         <image name="top_discription.png" width="466" height="18"/>
         <image name="top_slide.png" width="80" height="18"/>

@@ -111,6 +111,7 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
+                                        <exclude reference="EGh-Vw-Vxf"/>
                                         <include reference="TF4-xA-gNM"/>
                                         <include reference="uvc-lw-Sfg"/>
                                     </mask>

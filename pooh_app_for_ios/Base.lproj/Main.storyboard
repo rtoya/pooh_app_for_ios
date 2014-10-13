@@ -880,7 +880,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="startTapped:" destination="qFc-Ui-ER6" eventType="touchUpInside" id="lxN-pS-Pp4"/>
+                                    <action selector="startStopButtonTapped:" destination="qFc-Ui-ER6" eventType="touchUpInside" id="zYg-bP-lwb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-C5-pnF">
@@ -943,6 +943,8 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="BCu-gN-2oC" id="4Qu-gT-VxR"/>
+                        <outlet property="numericDisplay" destination="2I9-C5-pnF" id="CQ8-3B-fEc"/>
+                        <outlet property="startStopButton" destination="7Bc-WR-0kk" id="h8q-qP-OPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxH-PZ-YtB" userLabel="First Responder" sceneMemberID="firstResponder"/>

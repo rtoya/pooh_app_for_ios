@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -598,6 +598,9 @@
                                         <include reference="hQa-mf-xMc"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="loginTapped:" destination="GYe-Vt-qpl" eventType="touchUpInside" id="EZr-d2-kpn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIs-b8-BVu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -777,6 +780,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="fNf-7j-IfM" id="Ptd-Ac-C5s"/>
+                        <outlet property="txtPassword" destination="pcb-6u-aiL" id="3eF-qo-E3F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jl-gd-hcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yoT-BW-s2N" userLabel="Exit" sceneMemberID="exit"/>
@@ -792,6 +799,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Q3u-ZM-6RL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TKY-N5-gDA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vv-a8-Dc5">
@@ -884,13 +892,13 @@
                                 <exclude reference="2I9-C5-pnF"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="H3e-M4-L72"/>
-                                <exclude reference="yAK-FX-IQw"/>
                                 <exclude reference="Rrm-Ye-MWh"/>
                                 <exclude reference="9LZ-Nr-ueH"/>
                                 <exclude reference="IYK-9F-M48"/>
                                 <exclude reference="Wai-mS-yFH"/>
                                 <exclude reference="n94-0Q-lIN"/>
+                                <exclude reference="H3e-M4-L72"/>
+                                <exclude reference="yAK-FX-IQw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -902,13 +910,13 @@
                                 <include reference="2I9-C5-pnF"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="H3e-M4-L72"/>
-                                <include reference="yAK-FX-IQw"/>
                                 <include reference="Rrm-Ye-MWh"/>
                                 <include reference="9LZ-Nr-ueH"/>
                                 <include reference="IYK-9F-M48"/>
                                 <include reference="Wai-mS-yFH"/>
                                 <include reference="n94-0Q-lIN"/>
+                                <include reference="H3e-M4-L72"/>
+                                <include reference="yAK-FX-IQw"/>
                             </mask>
                         </variation>
                     </view>
@@ -922,6 +930,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="A8f-Ot-mwk" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="G7x-od-xNF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

@@ -1,5 +1,7 @@
 import UIKit
 import MapKit
+import QuartzCore
+
 //import CoreLocation
 
 // 現在地を取得してmapの中心にする
@@ -11,10 +13,13 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
-    // 地図関連 下のmapViewをMapKitViewと紐付ける
-    //var mapView: MKMapView = MKMapView()
-    
     @IBOutlet var mapView: MKMapView!
+    
+    // ストップウォッチ用
+    @IBOutlet var startStopButton: UIButton!
+    @IBOutlet var numericDisplay: UILabel!
+    var displayLink: CADisplayLink!
+    var lastDisplayLinkTimeStamp: CFTimeInterval!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +33,48 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
         self.mapView.setRegion(centerPosition,animated:true)
         
+        // ストップウォッチ用
+        // 表示の文字の所を一旦"Are yoy ready?で代替してます"
+        self.numericDisplay.text = "0.00"
+        self.startStopButton.setTitle("Start", forState: UIControlState.Normal)
+        self.displayLink = CADisplayLink(target: self, selector: "displayLinkUpdate:")
+        self.displayLink.paused = true;
+        self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        self.lastDisplayLinkTimeStamp = self.displayLink.timestamp
     }
- 
+
     // requestを投げて、poohの情報をgetしてくる
-    var poohAnnotations: String =
-    "{¥'a¥':{¥'latitude¥': 35.665213, ¥'longitude¥':139.730011}}"
-
-    //var poohJson = JSON.parse(string: poohAnnotations)
-    
+    var poohJSON = JSON.fromURL("http://localhost:3000/poohs")
+    /*
     @IBAction func startTapped(sender: AnyObject) {
-      println("aaaaaaaaaaaaa")
+        if poohJSON.isNull {
+            println("nullだよー")
+        }else{
+            for var num = 0; num < 10; num++ {
+                println(poohJSON)
+            }
+        }
     }
+    */
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func startStopButtonTapped(sender: AnyObject) {
+        self.displayLink.paused = !(self.displayLink.paused)
+        
+        // ボタンの表示を切り替えたい
+        var buttonText:String = "Stop"
+        if self.displayLink.paused {
+            if self.lastDisplayLinkTimeStamp > 0 {
+                buttonText = "Resume"
+            } else {
+                buttonText = "Start"
+            }
+        }
+        self.startStopButton.setTitle(buttonText, forState: UIControlState.Normal)
     }
-    
 
+    func displayLinkUpdate(sender: CADisplayLink) {
+        self.lastDisplayLinkTimeStamp = self.lastDisplayLinkTimeStamp + self.displayLink.duration
+        let formattedString:String = String(format: "%0.2f", self.lastDisplayLinkTimeStamp)
+        self.numericDisplay.text = formattedString;
+    }
 }

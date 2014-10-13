@@ -1,13 +1,20 @@
 import UIKit
 import MapKit
+//import CoreLocation
+
+// 現在地を取得してmapの中心にする
+// startを押したらStopWatchが動く, 文字がstopになる、poohのデータをpostする
+// map上にリアルタイムで世界中のpooh情報を表示する
+// 世界中のpoohのピンをタップすると詳細情報が表示される
+// イイねができる
+// stopをおしたらかかった時間を表示、データをpost、評価用のフォームが表示される
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     // 地図関連 下のmapViewをMapKitViewと紐付ける
-    var mapView: MKMapView = MKMapView()
+    //var mapView: MKMapView = MKMapView()
     
-    // 長押しでピン立てできる
-    var longtapGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
+    @IBOutlet var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,32 +24,25 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.view.addSubview(self.mapView)
         
         var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(35.665213,139.730011)
-        let span = MKCoordinateSpanMake(0.003, 0.003)
+        let span = MKCoordinateSpanMake(30, 30)
         var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
         self.mapView.setRegion(centerPosition,animated:true)
         
-        self.longtapGesture.addTarget(self, action: "longPressed:")
-        self.mapView.addGestureRecognizer(self.longtapGesture)
-     
     }
+ 
+    // requestを投げて、poohの情報をgetしてくる
+    var poohAnnotations: String =
+    "{¥'a¥':{¥'latitude¥': 35.665213, ¥'longitude¥':139.730011}}"
 
+    //var poohJson = JSON.parse(string: poohAnnotations)
+    
+    @IBAction func startTapped(sender: AnyObject) {
+      println("aaaaaaaaaaaaa")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func longPressed(sender: UILongPressGestureRecognizer){
-        
-        if(sender.state != .Began){
-            return
-        }
-        var location = sender.locationInView(self.mapView)
-        var mapPoint:CLLocationCoordinate2D = self.mapView.convertPoint(location, toCoordinateFromView: self.mapView)
-        
-        var theRoppongiAnnotation = MKPointAnnotation()
-        theRoppongiAnnotation.coordinate  = mapPoint
-        theRoppongiAnnotation.title       = "あいむうんこなう"
-        theRoppongiAnnotation.subtitle    = "ぶりぶり"
-        self.mapView.addAnnotation(theRoppongiAnnotation)
-    }
 
 }

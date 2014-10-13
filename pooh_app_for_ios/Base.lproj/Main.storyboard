@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qFc-Ui-ER6">
     <dependencies>
         <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -260,6 +260,9 @@
                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="110" y="237" width="13" height="91"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By entering the information , you can register." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVc-2r-jcr">
                                 <rect key="frame" x="249" y="307" width="102" height="21"/>
@@ -465,14 +468,6 @@
                                 <exclude reference="CAF-PQ-gEk"/>
                                 <exclude reference="Vbl-tB-vrC"/>
                                 <exclude reference="d35-GP-1GV"/>
-                                <exclude reference="f7F-fv-zj0"/>
-                                <exclude reference="1QR-Qm-rwZ"/>
-                                <exclude reference="6Fr-Ia-lkl"/>
-                                <exclude reference="E8z-aV-QoQ"/>
-                                <exclude reference="cwG-FI-tg9"/>
-                                <exclude reference="Dc9-k3-QKD"/>
-                                <exclude reference="Zz8-95-7xW"/>
-                                <exclude reference="d0r-iv-t4I"/>
                                 <exclude reference="0qB-6p-ltg"/>
                                 <exclude reference="Nlp-iI-9kw"/>
                                 <exclude reference="g25-Ys-tLR"/>
@@ -484,6 +479,14 @@
                                 <exclude reference="srd-IC-qty"/>
                                 <exclude reference="aak-ec-V06"/>
                                 <exclude reference="buX-Px-FpO"/>
+                                <exclude reference="f7F-fv-zj0"/>
+                                <exclude reference="1QR-Qm-rwZ"/>
+                                <exclude reference="6Fr-Ia-lkl"/>
+                                <exclude reference="E8z-aV-QoQ"/>
+                                <exclude reference="cwG-FI-tg9"/>
+                                <exclude reference="Dc9-k3-QKD"/>
+                                <exclude reference="Zz8-95-7xW"/>
+                                <exclude reference="d0r-iv-t4I"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -508,14 +511,6 @@
                                 <include reference="CAF-PQ-gEk"/>
                                 <include reference="Vbl-tB-vrC"/>
                                 <include reference="d35-GP-1GV"/>
-                                <include reference="f7F-fv-zj0"/>
-                                <include reference="1QR-Qm-rwZ"/>
-                                <include reference="6Fr-Ia-lkl"/>
-                                <include reference="E8z-aV-QoQ"/>
-                                <include reference="cwG-FI-tg9"/>
-                                <include reference="Dc9-k3-QKD"/>
-                                <include reference="Zz8-95-7xW"/>
-                                <include reference="d0r-iv-t4I"/>
                                 <include reference="0qB-6p-ltg"/>
                                 <include reference="Nlp-iI-9kw"/>
                                 <include reference="g25-Ys-tLR"/>
@@ -527,6 +522,14 @@
                                 <include reference="srd-IC-qty"/>
                                 <include reference="aak-ec-V06"/>
                                 <include reference="buX-Px-FpO"/>
+                                <include reference="f7F-fv-zj0"/>
+                                <include reference="1QR-Qm-rwZ"/>
+                                <include reference="6Fr-Ia-lkl"/>
+                                <include reference="E8z-aV-QoQ"/>
+                                <include reference="cwG-FI-tg9"/>
+                                <include reference="Dc9-k3-QKD"/>
+                                <include reference="Zz8-95-7xW"/>
+                                <include reference="d0r-iv-t4I"/>
                             </mask>
                         </variation>
                     </view>
@@ -802,10 +805,10 @@
             </objects>
             <point key="canvasLocation" x="-138" y="567"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="4ox-dJ-k9F">
             <objects>
-                <viewController id="qFc-Ui-ER6" sceneMemberID="viewController">
+                <viewController id="qFc-Ui-ER6" customClass="MapViewController" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ob-2h-vhm"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3u-ZM-6RL"/>
@@ -854,6 +857,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="44" width="410" height="414"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="TKY-N5-gDA" id="GjE-We-h0D"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bc-WR-0kk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -873,6 +879,9 @@
                                         <include reference="Uwe-yk-KBl"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="startTapped:" destination="qFc-Ui-ER6" eventType="touchUpInside" id="lxN-pS-Pp4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-C5-pnF">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -932,6 +941,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="BCu-gN-2oC" id="4Qu-gT-VxR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxH-PZ-YtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

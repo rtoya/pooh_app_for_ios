@@ -21,6 +21,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var displayLink: CADisplayLink!
     var lastDisplayLinkTimeStamp: CFTimeInterval!
     
+    // poohinfoをgetしてくる
+    var poohInformations = JSON.fromURL("http://localhost:3000/poohs")["poohInfo"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,10 +44,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.displayLink.paused = true;
         self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         self.lastDisplayLinkTimeStamp = self.displayLink.timestamp
-    }
+        
+        // Map上にAnnotationを表示する
+        for information in poohInformations {
+          //println(information.1["latitude"])
+          var poohId = information.1["pooh_id"]
+          var poohLatitude = information.1["latitude"].asDouble!;
+          var poohLongitude = information.1["longitude"].asDouble!;
+          
+          println(poohId)
 
-    // requestを投げて、poohの情報をgetしてくる
-    var poohJSON = JSON.fromURL("http://localhost:3000/poohs")
+          var poohCoordinate = CLLocationCoordinate2D(latitude: poohLatitude, longitude: poohLongitude)
+          var Annotation = MKPointAnnotation()
+          Annotation.coordinate  = poohCoordinate
+          self.mapView.addAnnotation(Annotation)
+        }
+    }
+    
     /*
     @IBAction func startTapped(sender: AnyObject) {
         if poohJSON.isNull {
@@ -57,9 +73,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     */
     
+    // startを押下した時の挙動
     @IBAction func startStopButtonTapped(sender: AnyObject) {
+        println(poohInformations)
         self.displayLink.paused = !(self.displayLink.paused)
         
+        // 位置情報、start_at、pooh_flgを送信する
+        /*
+
+          func postPoohInfo
+        
+        */
         // ボタンの表示を切り替えたい
         var buttonText:String = "Stop"
         if self.displayLink.paused {
@@ -72,6 +96,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.startStopButton.setTitle(buttonText, forState: UIControlState.Normal)
     }
 
+    // ストップウォッチの表示
     func displayLinkUpdate(sender: CADisplayLink) {
         self.lastDisplayLinkTimeStamp = self.lastDisplayLinkTimeStamp + self.displayLink.duration
         let formattedString:String = String(format: "%0.2f", self.lastDisplayLinkTimeStamp)

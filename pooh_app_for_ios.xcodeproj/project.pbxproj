@@ -15,7 +15,7 @@
 		B25E474A19CB246A00846746 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25E474919CB246A00846746 /* Images.xcassets */; };
 		B25E474D19CB246A00846746 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25E474B19CB246A00846746 /* LaunchScreen.xib */; };
 		B25E475919CB246A00846746 /* pooh_app_for_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E475819CB246A00846746 /* pooh_app_for_iosTests.swift */; };
-		B2F86FF519D6AEAA00963785 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F86FF419D6AEAA00963785 /* MapViewController.swift */; };
+		B2F86FF519D6AEAA00963785 /* PoohMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */; };
 		B2F86FF719D6AF4F00963785 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F86FF619D6AF4F00963785 /* MapKit.framework */; };
 		DF49416419EACA6F008C67C2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49415A19EACA6F008C67C2 /* background.png */; };
 		DF49416519EACA6F008C67C2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49415A19EACA6F008C67C2 /* background.png */; };
@@ -69,7 +69,7 @@
 		B25E475219CB246A00846746 /* pooh_app_for_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pooh_app_for_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25E475719CB246A00846746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B25E475819CB246A00846746 /* pooh_app_for_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pooh_app_for_iosTests.swift; sourceTree = "<group>"; };
-		B2F86FF419D6AEAA00963785 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoohMapViewController.swift; sourceTree = "<group>"; };
 		B2F86FF619D6AF4F00963785 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B4F55C503A7544DB5AD4C1BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DF49415A19EACA6F008C67C2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			children = (
 				DF49415919EACA6F008C67C2 /* images */,
 				B25E474219CB246A00846746 /* AppDelegate.swift */,
-				B2F86FF419D6AEAA00963785 /* MapViewController.swift */,
+				B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */,
 				B239586C19EBDBFA00EE7E27 /* json.swift */,
 				B25E474419CB246A00846746 /* ViewController.swift */,
 				B25E474619CB246A00846746 /* Main.storyboard */,
@@ -370,7 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25E474519CB246A00846746 /* ViewController.swift in Sources */,
-				B2F86FF519D6AEAA00963785 /* MapViewController.swift in Sources */,
+				B2F86FF519D6AEAA00963785 /* PoohMapViewController.swift in Sources */,
 				B25E474319CB246A00846746 /* AppDelegate.swift in Sources */,
 				B239586D19EBDBFA00EE7E27 /* json.swift in Sources */,
 			);

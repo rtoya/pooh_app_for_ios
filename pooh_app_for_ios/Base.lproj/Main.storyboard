@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qFc-Ui-ER6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -296,6 +296,9 @@
                                         <color key="value" red="0.88235300779342651" green="0.90588241815567017" blue="0.96862751245498657" alpha="1" colorSpace="deviceRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="36" y="407" width="328" height="30"/>
+                                </variation>
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="64" y="406" width="476" height="30"/>
                                 </variation>
@@ -336,6 +339,9 @@
                                         <color key="value" red="0.88235300780000003" green="0.90588241820000004" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="36" y="484" width="328" height="19"/>
+                                </variation>
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="64" y="406" width="476" height="30"/>
                                 </variation>
@@ -377,6 +383,9 @@
                                         <include reference="avy-lD-VPg"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="createUserTapped:" destination="Hcq-Pa-Kri" eventType="touchUpInside" id="Pda-ik-el3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -534,7 +543,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="createInput" destination="a5D-Oq-b9u" id="49R-Xx-yaz"/>
+                        <outlet property="txtEmail" destination="srH-Hc-ZIw" id="3mz-tc-Psu"/>
+                        <outlet property="txtName" destination="a5D-Oq-b9u" id="2Qe-23-rO6"/>
+                        <outlet property="txtPassword" destination="U5q-3g-1Vy" id="SRZ-As-RRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsO-o7-POD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,10 +816,10 @@
             </objects>
             <point key="canvasLocation" x="-138" y="567"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Pooh Map View Controller-->
         <scene sceneID="4ox-dJ-k9F">
             <objects>
-                <viewController id="qFc-Ui-ER6" customClass="MapViewController" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qFc-Ui-ER6" customClass="PoohMapViewController" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ob-2h-vhm"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3u-ZM-6RL"/>

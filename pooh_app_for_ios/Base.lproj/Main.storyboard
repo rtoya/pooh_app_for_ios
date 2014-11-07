@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qFc-Ui-ER6">
     <dependencies>
         <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -339,9 +339,6 @@
                                         <color key="value" red="0.88235300780000003" green="0.90588241820000004" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="36" y="484" width="328" height="19"/>
-                                </variation>
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="64" y="406" width="476" height="30"/>
                                 </variation>
@@ -1037,6 +1034,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpD-nj-b1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2548.5" y="-510"/>
+        </scene>
+        <!--Like ModalVC-->
+        <scene sceneID="70Y-eA-rLb">
+            <objects>
+                <viewController id="J6h-1v-Zbw" customClass="LikeModalVC" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rb5-gy-esX"/>
+                        <viewControllerLayoutGuide type="bottom" id="sfm-kG-EbG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tD9-9I-cHI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0D-2N-cne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548.5" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hwO-CS-Ppy">

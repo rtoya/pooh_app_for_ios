@@ -24,6 +24,10 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     // poohinfoをgetしてくる
     var poohInformations = JSON.fromURL("http://localhost:3000/poohs")["poohInfo"]
     
+    // いいねモーダル
+    let modalView = LikeModalVC()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +39,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         let span = MKCoordinateSpanMake(30, 30)
         var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
         self.mapView.setRegion(centerPosition,animated:true)
-        
+
         // ストップウォッチ用
         // 表示の文字の所を一旦"Are yoy ready?で代替してます"
         self.numericDisplay.text = "0.00"
@@ -46,36 +50,26 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.lastDisplayLinkTimeStamp = self.displayLink.timestamp
         
         // Map上にAnnotationを表示する
-        for information in poohInformations {
-          //println(information.1["latitude"])
-          var poohId = information.1["pooh_id"]
-          var poohLatitude = information.1["latitude"].asDouble!;
-          var poohLongitude = information.1["longitude"].asDouble!;
-          
-          println(poohId)
+        self.getPoohInfo(poohInformations)
+    }
 
-          var poohCoordinate = CLLocationCoordinate2D(latitude: poohLatitude, longitude: poohLongitude)
-          var Annotation = MKPointAnnotation()
-          Annotation.coordinate  = poohCoordinate
-          self.mapView.addAnnotation(Annotation)
+    // poohの情報を取得
+    func getPoohInfo(poohInformations: JSON){
+        for information in poohInformations {
+            var poohId = information.1["pooh_id"]
+            var poohLatitude = information.1["latitude"].asDouble!;
+            var poohLongitude = information.1["longitude"].asDouble!;
+            var poohCoordinate = CLLocationCoordinate2D(latitude: poohLatitude, longitude: poohLongitude)
+            var Annotation = MKPointAnnotation()
+            Annotation.coordinate  = poohCoordinate
+            self.mapView.addAnnotation(Annotation)
+            Annotation.title = "とおや"
+            Annotation.subtitle = "00:00:00"
         }
     }
-    
-    /*
-    @IBAction func startTapped(sender: AnyObject) {
-        if poohJSON.isNull {
-            println("nullだよー")
-        }else{
-            for var num = 0; num < 10; num++ {
-                println(poohJSON)
-            }
-        }
-    }
-    */
     
     // startを押下した時の挙動
     @IBAction func startStopButtonTapped(sender: AnyObject) {
-        println(poohInformations)
         self.displayLink.paused = !(self.displayLink.paused)
         
         // 位置情報、start_at、pooh_flgを送信する
@@ -101,5 +95,10 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.lastDisplayLinkTimeStamp = self.lastDisplayLinkTimeStamp + self.displayLink.duration
         let formattedString:String = String(format: "%0.2f", self.lastDisplayLinkTimeStamp)
         self.numericDisplay.text = formattedString;
+    }
+    
+    // いいねノモーダルを表示
+    func showLikeModal(sender: AnyObject){
+      self.presentViewController(self.modalView, animated: true, completion: nil)
     }
 }

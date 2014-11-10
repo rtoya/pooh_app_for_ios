@@ -1317,6 +1317,24 @@
             </objects>
             <point key="canvasLocation" x="2548.5" y="-510"/>
         </scene>
+        <!--Like ModalVC-->
+        <scene sceneID="70Y-eA-rLb">
+            <objects>
+                <viewController id="J6h-1v-Zbw" customClass="LikeModalVC" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rb5-gy-esX"/>
+                        <viewControllerLayoutGuide type="bottom" id="sfm-kG-EbG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tD9-9I-cHI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0D-2N-cne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548.5" y="178"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hwO-CS-Ppy">
             <objects>

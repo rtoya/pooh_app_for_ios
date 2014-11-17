@@ -10,10 +10,19 @@ import UIKit
 
 class LikeModalVC: UIViewController {
 
+    
+    @IBOutlet var closeLikeModalBtn: UIButton!  // 戻るボタン
+    @IBOutlet var sendLikeBtn: UIButton!        // likeボタン
+    
+    // ユーザー名ラベル
+    
+    
     var delegate: PoohMapViewController! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.orangeColor()
 
         
     }
@@ -22,16 +31,6 @@ class LikeModalVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        
 }

@@ -1,7 +1,6 @@
 import UIKit
 import MapKit
 import QuartzCore
-
 //import CoreLocation
 
 // 現在地を取得してmapの中心にする
@@ -23,9 +22,10 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     
     // poohinfoをgetしてくる
     var poohInformations = JSON.fromURL("http://localhost:3000/poohs")["poohInfo"]
+  
     
     // いいねモーダル
-    let modalView = LikeModalVC()
+
     
     
     override func viewDidLoad() {
@@ -51,6 +51,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         
         // Map上にAnnotationを表示する
         self.getPoohInfo(poohInformations)
+        
     }
 
     // poohの情報を取得
@@ -74,9 +75,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         
         // 位置情報、start_at、pooh_flgを送信する
         /*
-
           func postPoohInfo
-        
         */
         // ボタンの表示を切り替えたい
         var buttonText:String = "Stop"
@@ -97,8 +96,10 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.numericDisplay.text = formattedString;
     }
     
-    // いいねノモーダルを表示
+    
     func showLikeModal(sender: AnyObject){
-      self.presentViewController(self.modalView, animated: true, completion: nil)
+      let likeModalView = LikeModalVC()
+      likeModalView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+      self.presentViewController(likeModalView, animated: true, completion: nil)
     }
 }

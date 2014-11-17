@@ -24,37 +24,53 @@ class LikeModalVC: UIViewController {
     
     //var delegate: PoohMapViewController! = nil
     
+    var poohInfo = JSON.fromURL("http://localhost:3000/poohs/1")["pooh"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.orangeColor()
 
         // tapしたpoohの情報取得
-        var poohInfo = JSON.fromURL("http://localhost:3000/poohs/1")["pooh"]
         
-        // ランキングの文字列を表示するために一旦変数に置く
-        var name: NSString? = poohInfo[0]["name"].toString()
-        var rank: NSString? = poohInfo[0]["rank"].toString()
-        var total_poos: NSString? = poohInfo[0]["total_poos"].toString()
+        
+        // 表示する情報を変数定義（別にいらんけど）
+        var name: NSString! = poohInfo[0]["name"].toString()
+        var place: NSString! = poohInfo[0]["longitude"].toString()
+        var timer: NSString! = poohInfo[0]["started_at"].toString()
+        var like_num: NSString! = poohInfo[0]["like_num"].toString()
+        var rank: NSString! = poohInfo[0]["rank"].toString()
+        var total_poos: NSString! = poohInfo[0]["total_poos"].toString()
 
-        println(userNameLabel)
-        
-        userNameLabel.text = "aaaaaa"
-
-        
-        println(name)
-        println(self)
         
         // 表示文字列の変更
-        self.placeLabel.text = poohInfo[0]["longitude"].toString()
-        self.poohTimerLabel.text = poohInfo[0]["started_at"].toString()
-        self.likeNumLabel.text = poohInfo[0]["like_num"].toString()
-        self.rankingLabel.text = "\(rank)/\(total_poos)"
+        userNameLabel.text = name
+        self.placeLabel.text = place
+        self.poohTimerLabel.text = timer
+        self.likeNumLabel.text = like_num
+        self.rankingLabel.text = rank + "/" + total_poos
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func sendLike(sender: AnyObject) {
+        //println(poohInfo[0]["id"])
+        var res = JSON.fromURL("http://localhost:3000/poohs/1/like")
+        var result = res["result"].toString()
+        if result == "true" {
+            
+            self.likeNumLabel.text = res["like_num"].toString()
+
+        } else {
+
+            println("ng")
+
+            
+        }
+        
     }
 
         

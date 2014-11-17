@@ -25,6 +25,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
   
     
     // いいねモーダル
+    @IBOutlet var likeModalBtn: UIButton!
 
     
     
@@ -51,6 +52,10 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         
         // Map上にAnnotationを表示する
         self.getPoohInfo(poohInformations)
+        
+        // likemodal画面に遷移
+        likeModalBtn.addTarget(self, action: "showLikeModal:", forControlEvents: .TouchUpInside)
+        
         
     }
 
@@ -98,8 +103,11 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     
     
     func showLikeModal(sender: AnyObject){
-      let likeModalView = LikeModalVC()
-      likeModalView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-      self.presentViewController(likeModalView, animated: true, completion: nil)
+      //let likeModalView = LikeModalVC()
+      //likeModalView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+      //self.presentViewController(likeModalView, animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
     }
 }

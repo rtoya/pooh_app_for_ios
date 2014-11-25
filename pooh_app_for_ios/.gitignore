@@ -1,0 +1,8 @@
+# Mac
+.DS_Store
+
+# Xcode
+pooh_app_for_ios.xcworkspace/*
+
+# CocoaPod
+Pods/*

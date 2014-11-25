@@ -17,7 +17,7 @@
 		B25E475919CB246A00846746 /* pooh_app_for_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25E475819CB246A00846746 /* pooh_app_for_iosTests.swift */; };
 		B2F86FF519D6AEAA00963785 /* PoohMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */; };
 		B2F86FF719D6AF4F00963785 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F86FF619D6AF4F00963785 /* MapKit.framework */; };
-		DF1584EC1A19A2200011138E /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1584EB1A19A2200011138E /* json.swift */; };
+		DF3D7ECF1A243D72004EE869 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7ECE1A243D72004EE869 /* json.swift */; };
 		DF49416419EACA6F008C67C2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49415A19EACA6F008C67C2 /* background.png */; };
 		DF49416519EACA6F008C67C2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49415A19EACA6F008C67C2 /* background.png */; };
 		DF49416619EACA6F008C67C2 /* connect_fb.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49415B19EACA6F008C67C2 /* connect_fb.png */; };
@@ -73,7 +73,7 @@
 		B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoohMapViewController.swift; sourceTree = "<group>"; };
 		B2F86FF619D6AF4F00963785 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B4F55C503A7544DB5AD4C1BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		DF1584EB1A19A2200011138E /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = json.swift; path = ../../../.Trash/json.swift; sourceTree = "<group>"; };
+		DF3D7ECE1A243D72004EE869 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = json.swift; path = ../../../Desktop/json.swift; sourceTree = "<group>"; };
 		DF49415A19EACA6F008C67C2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		DF49415B19EACA6F008C67C2 /* connect_fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_fb.png; sourceTree = "<group>"; };
 		DF49415C19EACA6F008C67C2 /* create_acc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_acc.png; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				B25E474219CB246A00846746 /* AppDelegate.swift */,
 				B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */,
 				B233B91A1A08517D00A17BEB /* LikeModalVC.swift */,
-				DF1584EB1A19A2200011138E /* json.swift */,
+				DF3D7ECE1A243D72004EE869 /* json.swift */,
 				B25E474419CB246A00846746 /* ViewController.swift */,
 				B25E474619CB246A00846746 /* Main.storyboard */,
 				B25E474919CB246A00846746 /* Images.xcassets */,
@@ -375,8 +375,8 @@
 				B25E474519CB246A00846746 /* ViewController.swift in Sources */,
 				B2F86FF519D6AEAA00963785 /* PoohMapViewController.swift in Sources */,
 				B25E474319CB246A00846746 /* AppDelegate.swift in Sources */,
-				DF1584EC1A19A2200011138E /* json.swift in Sources */,
 				B233B91B1A08517D00A17BEB /* LikeModalVC.swift in Sources */,
+				DF3D7ECF1A243D72004EE869 /* json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

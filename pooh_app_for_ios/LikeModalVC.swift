@@ -1,12 +1,5 @@
-//
-//  LikeModalVC.swift
-//  pooh_app_for_ios
-//
-//  Created by Toya on 2014/11/04.
-//  Copyright (c) 2014年 Toya. All rights reserved.
-//
-
 import UIKit
+import CoreLocation
 
 class LikeModalVC: UIViewController {
 
@@ -14,7 +7,7 @@ class LikeModalVC: UIViewController {
     @IBOutlet var closeLikeModalBtn: UIButton!  // 戻るボタン
     @IBOutlet var sendLikeBtn: UIButton!        // likeボタン
     
-    // ユーザー名ラベル
+    // 各ラベル
     
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var placeLabel: UILabel!
@@ -32,8 +25,6 @@ class LikeModalVC: UIViewController {
         self.view.backgroundColor = UIColor.orangeColor()
 
         // tapしたpoohの情報取得
-        
-        
         // 表示する情報を変数定義（別にいらんけど）
         var name: NSString! = poohInfo[0]["name"].toString()
         var place: NSString! = poohInfo[0]["longitude"].toString()
@@ -57,21 +48,21 @@ class LikeModalVC: UIViewController {
     }
     
     @IBAction func sendLike(sender: AnyObject) {
-        //println(poohInfo[0]["id"])
+        // resの中身を見てロジック切り分け。
         var res = JSON.fromURL("http://localhost:3000/poohs/1/like")
         var result = res["result"].toString()
         if result == "true" {
-            
+            // like数をここで足す
             self.likeNumLabel.text = res["like_num"].toString()
-
+            // 元の画面に戻すメソッド
+            self.dismissViewControllerAnimated(true, completion: nil)
         } else {
-
             println("ng")
-
-            
         }
+    }
+    
+    func reverseGeocording(location: CLLocation){
+        //CLGeocoder().reverseGeocodeLocation(location, completionHandler:
         
     }
-
-        
 }

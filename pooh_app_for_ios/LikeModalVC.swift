@@ -22,8 +22,6 @@ class LikeModalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.orangeColor()
-
         // tapしたpoohの情報取得
         // 表示する情報を変数定義（別にいらんけど）
         var name: NSString! = poohInfo[0]["name"].toString()

@@ -12,7 +12,7 @@ class EvaluationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
+//        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png"))
 
 
         // Do any additional setup after loading the view.

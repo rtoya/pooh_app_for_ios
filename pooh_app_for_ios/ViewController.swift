@@ -16,18 +16,63 @@ class ViewController: UIViewController {
 
 
 // アカウント登録
-class AccCreateView: UIViewController {
+class AccCreateView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet var txtName: UITextField!
     @IBOutlet var txtEmail: UITextField!
     @IBOutlet var txtPassword: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
+        //super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cellName: String
+        
+        println(indexPath.row)
+        
+        switch indexPath.row {
+        case 0:
+            cellName = "nickNameCell"
+        case 1:
+            cellName = "mailCell"
+        case 2:
+            cellName = "passwordCell"
+        default:
+            cellName = ""
+        }
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath) as UITableViewCell
+        return cell
+
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
+        // do nothing
+
+    }
+    
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 30
     }
     
     @IBAction func createUserTapped(sender: AnyObject) {

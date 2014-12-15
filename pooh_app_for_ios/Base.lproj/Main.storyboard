@@ -534,8 +534,7 @@
                                         <exclude reference="ef0-5e-sPY"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="294" width="368" height="155"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="ef0-5e-sPY"/>
                                     </mask>

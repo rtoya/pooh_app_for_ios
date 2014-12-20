@@ -79,7 +79,6 @@
     B25E475219CB246A00846746 /* pooh_app_for_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pooh_app_for_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
     B25E475719CB246A00846746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
     B25E475819CB246A00846746 /* pooh_app_for_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pooh_app_for_iosTests.swift; sourceTree = "<group>"; };
-    B2D939A81A35E6A6005EFC3C /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Json.swift; path = ../../Downloads/Json.swift; sourceTree = "<group>"; };
     B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoohMapViewController.swift; sourceTree = "<group>"; };
     B2F86FF619D6AF4F00963785 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
     B4F55C503A7544DB5AD4C1BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };

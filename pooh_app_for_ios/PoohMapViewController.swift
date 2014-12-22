@@ -27,7 +27,9 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     // いいねモーダル
     @IBOutlet var likeModalBtn: UIButton!
 
+    var pooh_flg = 0   //pooh_flg
     
+    let evaluateVC = EvaluationVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +37,11 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.frame = CGRectMake(0,20,self.view.bounds.size.width,self.view.bounds.size.height)
         self.mapView.delegate = self
         self.view.addSubview(self.mapView)
-        
         var centerCoordinate : CLLocationCoordinate2D = CLLocationCoordinate2DMake(35.665213,139.730011)
         let span = MKCoordinateSpanMake(30, 30)
         var centerPosition = MKCoordinateRegionMake(centerCoordinate, span)
         self.mapView.setRegion(centerPosition,animated:true)
 
-        // ストップウォッチ用
-        // 表示の文字の所を一旦"Are yoy ready?で代替してます"
         self.numericDisplay.text = "0.00"
         self.startStopButton.setTitle("Start", forState: UIControlState.Normal)
         self.displayLink = CADisplayLink(target: self, selector: "displayLinkUpdate:")
@@ -50,13 +49,9 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         self.lastDisplayLinkTimeStamp = self.displayLink.timestamp
         
-        // Map上にAnnotationを表示する
         self.getPoohInfo(poohInformations)
         
-        // likemodal画面に遷移
         likeModalBtn.addTarget(self, action: "showLikeModal:", forControlEvents: .TouchUpInside)
-        
-        
     }
 
     // poohの情報を取得
@@ -69,29 +64,26 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
             var Annotation = MKPointAnnotation()
             Annotation.coordinate  = poohCoordinate
             self.mapView.addAnnotation(Annotation)
-            Annotation.title = "とおや"
-            Annotation.subtitle = "00:00:00"
+           
         }
     }
     
     // startを押下した時の挙動
     @IBAction func startStopButtonTapped(sender: AnyObject) {
         self.displayLink.paused = !(self.displayLink.paused)
+    
+        var now = NSDate() //started_at, finished_at
+        var lat = 0.111111 //latitude
+        var lon = 0.222222 //longitude
         
-        // 位置情報、start_at、pooh_flgを送信する
-        /*
-          func postPoohInfo
-        */
-        // ボタンの表示を切り替えたい
-        var buttonText:String = "Stop"
-        if self.displayLink.paused {
-            if self.lastDisplayLinkTimeStamp > 0 {
-                buttonText = "Resume"
-            } else {
-                buttonText = "Start"
-            }
+        if pooh_flg == 1 {
+          pooh_flg = 0
+            self.finishPooh(now)
+        } else {
+          pooh_flg = 1
+            self.startPooh(now)
         }
-        self.startStopButton.setTitle(buttonText, forState: UIControlState.Normal)
+        
     }
 
     // ストップウォッチの表示
@@ -101,7 +93,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.numericDisplay.text = formattedString;
     }
     
-    
+    // likeModalを開く
     func showLikeModal(sender: AnyObject){
       //let likeModalView = LikeModalVC()
       //likeModalView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
@@ -110,4 +102,15 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func unwindToTop(segue: UIStoryboardSegue) {
     }
+    
+    // うんこ開始時のメソッド
+    func startPooh(started_at: NSDate){
+        println("うんこするで:\(started_at)")
+    }
+    
+    // うんこ終了時のメソッド
+    func finishPooh(finished_at: AnyObject){
+        self.presentViewController(self.evaluateVC, animated: true, completion: nil)
+    }
+    
 }

@@ -17,7 +17,9 @@ class LikeModalVC: UIViewController {
     
     //var delegate: PoohMapViewController! = nil
     
-    var poohInfo = JSON.fromURL("http://localhost:3000/poohs/1")["pooh"]
+    var poohInfo = JSON.fromURL("http://localhost:3000/poohs/2")["pooh"]
+    
+    var locationManager = LocationManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,28 @@ class LikeModalVC: UIViewController {
         // tapしたpoohの情報取得
         // 表示する情報を変数定義（別にいらんけど）
         var name: NSString! = poohInfo[0]["name"].toString()
-        var place: NSString! = poohInfo[0]["longitude"].toString()
         var timer: NSString! = poohInfo[0]["started_at"].toString()
         var like_num: NSString! = poohInfo[0]["like_num"].toString()
         var rank: NSString! = poohInfo[0]["rank"].toString()
         var total_poos: NSString! = poohInfo[0]["total_poos"].toString()
 
+        var lat: Double! = poohInfo[0]["latitude"].asDouble
+        var long: Double! = poohInfo[0]["longitude"].asDouble
+        var place: NSString! = ""
+        var administrativeArea: NSString! = ""
+        var country: NSString! = ""
+
+        // 緯度・経度から住所を取得
+        locationManager.reverseGeocodeLocationWithLatLon(latitude: lat, longitude: long) { (reverseGecodeInfo,placemark,error) -> Void in
+            if(error != nil){
+                println(error)
+            }else{
+                administrativeArea = reverseGecodeInfo!["administrativeArea"] as NSString
+                country = reverseGecodeInfo!["country"] as NSString
+                place = "\(administrativeArea), \(country)"
+                self.placeLabel.text = place
+            }
+        }
         
         // 表示文字列の変更
         userNameLabel.text = name
@@ -60,7 +78,6 @@ class LikeModalVC: UIViewController {
     }
     
     func reverseGeocording(location: CLLocation){
-        //CLGeocoder().reverseGeocodeLocation(location, completionHandler:
         
     }
 }

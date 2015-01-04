@@ -7,7 +7,6 @@ import Alamofire
 // 文字がstopになる、poohのデータをpostする
 // 世界中のpoohのピンをタップすると詳細情報が表示される
 // イイねができる
-// stopをおしたらかかった時間を表示、データをpost、評価用のフォームが表示される
 
 class PoohMapViewController: UIViewController, MKMapViewDelegate {
     

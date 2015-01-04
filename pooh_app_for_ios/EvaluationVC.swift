@@ -17,20 +17,21 @@ class EvaluationVC: UIViewController {
     
     var app:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
     var poohId: NSInteger!
-    var poohData: [NSDictionary] = []//データごと渡したいっす
+    var poohData: [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println(poohData)
-        
-        //var poohInfo = JSON.fromURL("\(app._host)/poohs/\(self.poohId)")
-        //self.timerTxt.text = "123LIKES!"
-        //self.likeTxt.text = "123LIKES!"
+        // コメントアウトを取ればserverから取得したデータを使用できる
+        var like_num = 134 //poohData[0]["like_num"] as NSInteger
+        var time = "00:00:10" // poohData[0]["time"] as NSString
+        self.timerTxt.text = "\(time)"
+        self.likeTxt.text = "\(like_num)LIKES!"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // 評価をpostするメソッドを作成する
     
 }

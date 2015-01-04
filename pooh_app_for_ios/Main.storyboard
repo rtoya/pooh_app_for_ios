@@ -977,7 +977,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="startStopButtonTapped:" destination="qFc-Ui-ER6" eventType="touchUpInside" id="zYg-bP-lwb"/>
-                                    <segue destination="d0v-wu-Ytu" kind="presentation" identifier="toEvaluationVC" id="kxy-xv-Jlo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-C5-pnF">
@@ -1071,6 +1070,7 @@
                         <outlet property="startStopButton" destination="7Bc-WR-0kk" id="h8q-qP-OPT"/>
                         <segue destination="khZ-Vo-Wsu" kind="unwind" unwindAction="goBackTop:" id="zNG-bN-Zbd"/>
                         <segue destination="J6h-1v-Zbw" kind="presentation" identifier="toLikeModalVC" id="2eD-2S-TYA"/>
+                        <segue destination="d0v-wu-Ytu" kind="presentation" identifier="toEvaluationVC" id="CUq-10-aSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxH-PZ-YtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1764,6 +1764,9 @@
                                         <include reference="q6y-on-nXb"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="x2P-mQ-uC4" kind="unwind" unwindAction="unwindToTop:" id="YJQ-2i-LYp"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="747" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-Kz-Bv0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1771,6 +1774,9 @@
                                     <navigationItem id="my8-MN-5LO">
                                         <barButtonItem key="leftBarButtonItem" image="back_arrow.png" width="30" id="Jnf-gz-oQv">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="x2P-mQ-uC4" kind="unwind" unwindAction="unwindToTop:" id="dKd-R0-7AI"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -2202,6 +2208,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clL-ev-DzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="x2P-mQ-uC4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2548.5" y="867"/>
         </scene>

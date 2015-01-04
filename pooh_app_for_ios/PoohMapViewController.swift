@@ -23,15 +23,10 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     var pooh_id: NSInteger!
     var likeTargetPoohId: NSInteger!
     
-    //let EvalVC = EvaluationVC()
-
     var finishResult : [ NSObject : AnyObject ] = [ : ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        println(finishResult)
-        // 現在地の取得
         // ここで現在地を取得できるようにする
         
         // map部分の初期化
@@ -53,7 +48,6 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         
         // リアルタイムのトイレ情報を取得
         self.getPoohInfo()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -136,7 +130,6 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
                     .JSONObjectWithData(data! as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                 self.pooh_id = startResult["pooh_id"] as NSInteger
         }
-        println("aaaaaaaaaaaaaaaa")
         self.pooh_flg = 1
     }
     
@@ -152,6 +145,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
             .response() {request, response, data, error in
                 self.finishResult = NSJSONSerialization
                     .JSONObjectWithData(data! as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                println(self.finishResult)
                 self.numericDisplay.text = "0.00"
                 self.pooh_flg = 0
                 self.performSegueWithIdentifier("toEvaluationVC", sender: nil)
@@ -182,7 +176,6 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
             pinView!.animatesDrop = true
             pinView!.pinColor = MKPinAnnotationColor.Purple//.Red
             pinView!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as UIButton
-            
         } else {
             pinView!.annotation = annotation
         }

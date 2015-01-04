@@ -27,8 +27,8 @@ class EvaluationVC: UIViewController {
         var like_num = poohData["like_num"] as NSInteger
         var time = poohData["time"] as NSString
                 
-        //self.timerTxt.text! = "\(time)"
-        //self.likeTxt.text! = "\(like_num)LIKES!"
+        self.timerTxt.text = "\(time)"
+        self.likeTxt.text = "\(like_num)LIKES!"
     }
 
     override func didReceiveMemoryWarning() {

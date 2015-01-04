@@ -27,8 +27,8 @@ class AccCreateView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         //super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
         
-        tableView.dataSource = self
-        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {

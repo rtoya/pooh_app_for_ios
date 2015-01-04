@@ -3,7 +3,7 @@ import MapKit
 
 class CustomMKPointAnnotation: MKPointAnnotation {
     var senderTag: Int!
-    var pooh_id: String!
+    var pooh_id: NSInteger!
     
     
 }

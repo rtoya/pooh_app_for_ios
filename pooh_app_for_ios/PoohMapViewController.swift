@@ -21,6 +21,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     var app:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate) // host名をglobal変数から呼び出す
     var pooh_flg = 0   //pooh_flg
     var pooh_id: NSInteger!
+    var likeTargetPoohId: NSInteger!
     
     //let EvalVC = EvaluationVC()
 
@@ -81,7 +82,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
                         var poohCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
                         var Annotation: CustomMKPointAnnotation = CustomMKPointAnnotation()
                         Annotation.title = information["name"] as String
-                        Annotation.pooh_id = "\(poohId)"
+                        Annotation.pooh_id = poohId as NSInteger
                         //Annotation.subtitle = information["name"] as String // 地名でも入れます
                         Annotation.coordinate  = poohCoordinate
                         self.mapView.addAnnotation(Annotation)
@@ -114,13 +115,6 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         self.lastDisplayLinkTimeStamp = self.lastDisplayLinkTimeStamp + self.displayLink.duration
         let formattedString:String = String(format: "%0.2f", self.lastDisplayLinkTimeStamp)
         self.numericDisplay.text = formattedString;
-    }
-    
-    // likeModalを開く
-    func showLikeModal(sender: AnyObject){
-      //let likeModalView = LikeModalVC()
-      //likeModalView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-      //self.presentViewController(likeModalView, animated: true, completion: nil)
     }
     
     @IBAction func unwindToTop(segue: UIStoryboardSegue) {
@@ -163,32 +157,47 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    // modalviewの制御
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "toEvaluationVC") {
             let EvalVC: EvaluationVC = segue.destinationViewController as EvaluationVC
             EvalVC.poohData = self.finishResult
         } else if (segue.identifier == "toLikeModalVC"){
             let likeModalVC: LikeModalVC = segue.destinationViewController as LikeModalVC
-            // モーダルにに渡す値を選択
+            likeModalVC.poohId = self.likeTargetPoohId
         }
     }
     
     // annotationタップ時に表示される吹き出しのカスタマイズ
-    func mapViewAnnot(mapViewAnnot: MKMapView!,ViewForAnnotation annotation: MKAnnotation!) ->MKAnnotationView{
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if annotation is MKUserLocation{ /* return nil */ } // 現在地の場合は非表示にしたい
         let reuseId = "pin" //"\(annotation.pooh_id)"
         
-        var pinView = mapViewAnnot.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
         
         if(pinView == nil){
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
             pinView!.animatesDrop = true
-            pinView!.pinColor = .Red
+            pinView!.pinColor = MKPinAnnotationColor.Purple//.Red
             pinView!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as UIButton
+            
         } else {
             pinView!.annotation = annotation
         }
         return pinView!
     }
+
+    // annotationの吹き出しのボタンtap時の挙動
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+            if control == view.rightCalloutAccessoryView {
+                if let cpa = view.annotation as? CustomMKPointAnnotation {
+                    self.likeTargetPoohId = cpa.pooh_id as NSInteger
+                    self.performSegueWithIdentifier("toLikeModalVC", sender: nil)
+                }
+            }
+            
+    }
+    
+    
 }

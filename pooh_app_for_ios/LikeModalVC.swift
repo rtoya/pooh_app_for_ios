@@ -16,11 +16,12 @@ class LikeModalVC: UIViewController {
     var app:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
     
     var locationManager = LocationManager.sharedInstance
+    var poohId: NSInteger!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var poohInfo = JSON.fromURL("\(app._host)/poohs/2")["pooh"]
+        var poohInfo = JSON.fromURL("\(app._host)/poohs/\(poohId)")["pooh"]
 
         userNameLabel.text = poohInfo[0]["name"].toString()
         poohTimerLabel.text = poohInfo[0]["started_at"].toString()
@@ -40,7 +41,6 @@ class LikeModalVC: UIViewController {
                 self.placeLabel.text = place
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,7 +50,7 @@ class LikeModalVC: UIViewController {
     
     @IBAction func sendLike(sender: AnyObject) {
         // resの中身を見てロジック切り分け。
-        var res = JSON.fromURL("\(app._host)/poohs/1/like")
+        var res = JSON.fromURL("\(app._host)/poohs/\(poohId)/like")
         var result = res["result"].toString()
         if result == "true" {
             // like数をここで足す

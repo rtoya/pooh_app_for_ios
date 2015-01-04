@@ -22,9 +22,14 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
     var pooh_flg = 0   //pooh_flg
     var pooh_id: NSInteger!
     
+    //let EvalVC = EvaluationVC()
+
+    var finishResult : [ NSObject : AnyObject ] = [ : ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        println(finishResult)
         // 現在地の取得
         // ここで現在地を取得できるようにする
         
@@ -150,16 +155,21 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
 
         Alamofire.request(.POST, url, parameters: finishData)
             .response() {request, response, data, error in
-                var finishResult = NSJSONSerialization
+                self.finishResult = NSJSONSerialization
                     .JSONObjectWithData(data! as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-                
-                var evaluateVC = EvaluationVC()
-                evaluateVC.poohId = self.pooh_id
-                evaluateVC.poohData.append(finishResult)
-                self.pooh_flg = 0
                 self.numericDisplay.text = "0.00"
-                
-                self.presentViewController(evaluateVC, animated: true, completion: nil)
+                self.pooh_flg = 0
+                self.performSegueWithIdentifier("toEvaluationVC", sender: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "toEvaluationVC") {
+            let EvalVC: EvaluationVC = segue.destinationViewController as EvaluationVC
+            EvalVC.poohData = self.finishResult
+        } else if (segue.identifier == "toLikeModalVC"){
+            let likeModalVC: LikeModalVC = segue.destinationViewController as LikeModalVC
+            // モーダルにに渡す値を選択
         }
     }
     

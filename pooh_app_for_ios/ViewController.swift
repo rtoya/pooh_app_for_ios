@@ -29,7 +29,6 @@ class AccCreateView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         tableView.dataSource = self
         tableView.delegate = self
-        
     }
     
     override func didReceiveMemoryWarning() {

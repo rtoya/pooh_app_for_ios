@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EvaluationVC: UIViewController {
     
@@ -17,15 +18,17 @@ class EvaluationVC: UIViewController {
     
     var app:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
     var poohId: NSInteger!
-    var poohData: [NSDictionary] = []
+    var poohData: [ NSObject : AnyObject ] = [ : ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // コメントアウトを取ればserverから取得したデータを使用できる
-        var like_num = 134 //poohData[0]["like_num"] as NSInteger
-        var time = "00:00:10" // poohData[0]["time"] as NSString
-        self.timerTxt.text = "\(time)"
-        self.likeTxt.text = "\(like_num)LIKES!"
+        var like_num = poohData["like_num"] as NSInteger
+        var time = poohData["time"] as NSString
+                
+        self.timerTxt.text! = "\(time)"
+        self.likeTxt.text! = "\(like_num)LIKES!"
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,5 +36,28 @@ class EvaluationVC: UIViewController {
     }
     
     // 評価をpostするメソッドを作成する
+    
+    @IBAction func saveEvaluation(sender: AnyObject) {
+        poohId = 1
+        var toiletTypeIdx = self.typeSelect.selectedSegmentIndex     // 0が公共
+        var toiletChargeIdx = self.chargeSelect.selectedSegmentIndex // 0が無料
+        var url: String = "\(app._host)/toilet/evaluate/\(poohId)"
+        let evalResult = [
+            "pooh_id": "\(poohId)",
+            "user_id": "1", //あとで変更
+            "type": "\(toiletTypeIdx)",
+            "charge": "\(toiletChargeIdx)",
+            "cleanliness":"5" // uiを変更して反映する
+        ]
+        
+        Alamofire.request(.POST, url, parameters: evalResult)
+            .response() {request, response, data, error in
+                var startResult = NSJSONSerialization
+                    .JSONObjectWithData(data! as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                println(startResult)
+        }
+        
+    }
+    
     
 }

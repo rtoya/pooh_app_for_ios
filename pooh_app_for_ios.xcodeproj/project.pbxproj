@@ -21,6 +21,7 @@
 		B2CDFC891A51448B00A10F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CDFC881A51448B00A10F87 /* Main.storyboard */; };
 		B2D939A91A35E6A6005EFC3C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B2DE9BDD1A5655430069E9F1 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B20FDD8B1A56352700D83137 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B2E472311A596B8D00B228F9 /* AccountCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E472301A596B8D00B228F9 /* AccountCreateViewController.swift */; };
 		B2F86FF519D6AEAA00963785 /* PoohMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */; };
 		B2F86FF719D6AF4F00963785 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F86FF619D6AF4F00963785 /* MapKit.framework */; };
 		DF49416419EACA6F008C67C2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DF49415A19EACA6F008C67C2 /* background.png */; };
@@ -127,6 +128,7 @@
 		B25E475819CB246A00846746 /* pooh_app_for_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pooh_app_for_iosTests.swift; sourceTree = "<group>"; };
 		B2CDFC861A512BD200A10F87 /* CustomMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMKPointAnnotation.swift; sourceTree = "<group>"; };
 		B2CDFC881A51448B00A10F87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B2E472301A596B8D00B228F9 /* AccountCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreateViewController.swift; sourceTree = "<group>"; };
 		B2F86FF419D6AEAA00963785 /* PoohMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoohMapViewController.swift; sourceTree = "<group>"; };
 		B2F86FF619D6AF4F00963785 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B4F55C503A7544DB5AD4C1BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				B225CDA31A3E81A0000D2F68 /* Json.swift */,
 				B233B91A1A08517D00A17BEB /* LikeModalVC.swift */,
 				B25E474419CB246A00846746 /* ViewController.swift */,
+				B2E472301A596B8D00B228F9 /* AccountCreateViewController.swift */,
 				B2CDFC881A51448B00A10F87 /* Main.storyboard */,
 				B23C84E91A19FB0700E3CBAE /* EvaluationVC.swift */,
 				B2144CEF1A47E23500EE6D71 /* LocationManager.swift */,
@@ -509,6 +512,7 @@
 				B2CDFC871A512BD200A10F87 /* CustomMKPointAnnotation.swift in Sources */,
 				B2144CF01A47E23500EE6D71 /* LocationManager.swift in Sources */,
 				B2F86FF519D6AEAA00963785 /* PoohMapViewController.swift in Sources */,
+				B2E472311A596B8D00B228F9 /* AccountCreateViewController.swift in Sources */,
 				B25E474319CB246A00846746 /* AppDelegate.swift in Sources */,
 				B233B91B1A08517D00A17BEB /* LikeModalVC.swift in Sources */,
 			);

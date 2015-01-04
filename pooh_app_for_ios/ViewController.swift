@@ -4,7 +4,7 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png"))
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -89,7 +89,7 @@ class AccCreateView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let jsonString = JSON(loginData).toString()
         
         // post処理
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/create"), cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/create")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         var response: NSURLResponse?
         var error: NSError?
         
@@ -104,7 +104,7 @@ class AccCreateView: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let statusCode = httpResponse.statusCode
             if (statusCode == 200){
                 // login成功時の処理
-                var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)
+                var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
                 var user_id = JSON.parse(responseData)["user_id"]
                 
                 // NSUserDefaultsにユーザーデータを保存
@@ -143,7 +143,7 @@ class LoginView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png"))
+        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -168,7 +168,7 @@ class LoginView: UIViewController {
         
         
         // post処理
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/login"), cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/login")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         var response: NSURLResponse?
         var error: NSError?
         
@@ -183,7 +183,7 @@ class LoginView: UIViewController {
             let statusCode = httpResponse.statusCode
             if (statusCode == 200){
               // login成功時の処理
-              var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)
+              var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
               var user_id = JSON.parse(responseData)["user_id"]
               
               // NSUserDefaultsにユーザーデータを保存

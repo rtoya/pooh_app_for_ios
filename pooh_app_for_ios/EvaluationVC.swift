@@ -9,29 +9,28 @@
 import UIKit
 
 class EvaluationVC: UIViewController {
-
+    
+    @IBOutlet weak var timerTxt: UILabel!
+    @IBOutlet weak var likeTxt: UILabel!
+    @IBOutlet weak var typeSelect: UISegmentedControl!
+    @IBOutlet weak var chargeSelect: UISegmentedControl!
+    
+    var app:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+    var poohId: NSInteger!
+    var poohData: [NSDictionary] = []//データごと渡したいっす
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png"))
-
-
-        // Do any additional setup after loading the view.
+        
+        println(poohData)
+        
+        //var poohInfo = JSON.fromURL("\(app._host)/poohs/\(self.poohId)")
+        //self.timerTxt.text = "123LIKES!"
+        //self.likeTxt.text = "123LIKES!"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

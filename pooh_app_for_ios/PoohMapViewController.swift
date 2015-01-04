@@ -136,6 +136,7 @@ class PoohMapViewController: UIViewController, MKMapViewDelegate {
                     .JSONObjectWithData(data! as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                 self.pooh_id = startResult["pooh_id"] as NSInteger
         }
+        println("aaaaaaaaaaaaaaaa")
         self.pooh_flg = 1
     }
     

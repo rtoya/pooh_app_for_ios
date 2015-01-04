@@ -977,7 +977,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="startStopButtonTapped:" destination="qFc-Ui-ER6" eventType="touchUpInside" id="zYg-bP-lwb"/>
-                                    <segue destination="d0v-wu-Ytu" kind="modal" id="kxy-xv-Jlo"/>
+                                    <segue destination="d0v-wu-Ytu" kind="presentation" identifier="toEvaluationVC" id="kxy-xv-Jlo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-C5-pnF">
@@ -1070,6 +1070,7 @@
                         <outlet property="numericDisplay" destination="POx-4q-dzI" id="p3w-ZT-9Wa"/>
                         <outlet property="startStopButton" destination="7Bc-WR-0kk" id="h8q-qP-OPT"/>
                         <segue destination="khZ-Vo-Wsu" kind="unwind" unwindAction="goBackTop:" id="zNG-bN-Zbd"/>
+                        <segue destination="J6h-1v-Zbw" kind="presentation" id="2eD-2S-TYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxH-PZ-YtB" userLabel="First Responder" sceneMemberID="firstResponder"/>

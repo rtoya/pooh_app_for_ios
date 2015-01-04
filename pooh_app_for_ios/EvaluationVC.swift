@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EvaluationVC: UIViewController {
     
@@ -33,5 +34,33 @@ class EvaluationVC: UIViewController {
     }
     
     // 評価をpostするメソッドを作成する
+    
+    @IBAction func saveEvaluation(sender: AnyObject) {
+        poohId = 1
+        var toiletTypeIdx = self.typeSelect.selectedSegmentIndex     // 0が公共
+        var toiletChargeIdx = self.chargeSelect.selectedSegmentIndex // 0が無料
+        var url: String = "\(app._host)/toilet/evaluate/\(poohId)"
+        println(url)
+        let evalResult = [
+            "pooh_id": "\(poohId)",
+            "user_id": "1", //あとで変更
+            "type": "\(toiletTypeIdx)",
+            "charge": "\(toiletChargeIdx)",
+            "cleanliness":"5"
+        ]
+        
+        Alamofire.request(.POST, url, parameters: evalResult)
+            .response() {request, response, data, error in
+                var startResult = NSJSONSerialization
+                    .JSONObjectWithData(data! as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                //画面を地図に戻す
+                //エラーハンドリングを後で追加する
+                var poohMapVC = PoohMapViewController()
+                self.presentViewController(poohMapVC, animated: true, completion: nil)
+
+        }
+        
+    }
+    
     
 }

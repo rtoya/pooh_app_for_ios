@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hcq-Pa-Kri" kind="modal" identifier="AccountCreateViewController" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="CQ8-TB-N6T"/>
+                                    <segue destination="Hcq-Pa-Kri" kind="modal" identifier="AccountCreateViewController" id="CQ8-TB-N6T"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_ttl.png" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-gw-5r5">
@@ -490,6 +490,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="290" width="368" height="141"/>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-Dm-DFq" userLabel="CreateAccountBtm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -616,6 +619,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="1CW-Z5-5ik"/>
                     <connections>
                         <outlet property="tableView" destination="bq3-ay-vkE" id="hn5-r2-a51"/>
                     </connections>
@@ -2230,31 +2234,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J6-4E-Icf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.5" y="-178"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Pcm-wU-yaA">
-            <objects>
-                <tableViewController id="GZk-WM-ODj" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4co-CB-Nba">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rld-b5-7Ck">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rld-b5-7Ck" id="b6h-Pp-PfU">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="GZk-WM-ODj" id="dmu-J7-RYo"/>
-                            <outlet property="delegate" destination="GZk-WM-ODj" id="KoQ-Mt-tZz"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cae-U6-xcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

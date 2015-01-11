@@ -25,7 +25,6 @@ class AccountCreateViewController: UIViewController, UITableViewDelegate, UITabl
         super.didReceiveMemoryWarning()
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellName: String
         

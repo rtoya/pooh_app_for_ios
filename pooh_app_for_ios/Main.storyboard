@@ -325,13 +325,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="Tdg-0E-RGG">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="nameCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="nickNameCell" rowHeight="40" id="Tdg-0E-RGG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tdg-0E-RGG" id="wD6-wU-YRS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NICK NAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHB-WO-Whp">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NICK NAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHB-WO-Whp">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="eIy-bd-VVY"/>
@@ -343,7 +343,8 @@
                                                             <exclude reference="eIy-bd-VVY"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="304" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="eIy-bd-VVY"/>
                                                         </mask>
@@ -382,13 +383,13 @@
                                             <outlet property="txtName" destination="iHB-WO-Whp" id="T07-Kx-LLA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="ll0-sm-krY">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="mailCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="mailCell" rowHeight="40" id="ll0-sm-krY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ll0-sm-krY" id="5hN-Cv-zdm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nvx-BC-C2x">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nvx-BC-C2x">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="yVB-Fx-D7A"/>
@@ -439,13 +440,13 @@
                                             <outlet property="txtEmail" destination="Nvx-BC-C2x" id="IbD-62-B8t"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="B9l-yv-DUd">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="passCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" rowHeight="40" id="B9l-yv-DUd">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9l-yv-DUd" id="w2E-Pt-QBs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVi-zm-Gew">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVi-zm-Gew">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="8Sq-da-0iP"/>
@@ -457,7 +458,8 @@
                                                             <exclude reference="8Sq-da-0iP"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="12" width="352" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="8Sq-da-0iP"/>
                                                         </mask>
@@ -492,16 +494,8 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="txtPassword" destination="XVi-zm-Gew" id="5S1-XS-aIy"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="txtEmail" destination="Nvx-BC-C2x" id="AFG-5N-Lod"/>
-                                    <outlet property="txtName" destination="iHB-WO-Whp" id="wsP-o7-V4O"/>
-                                    <outlet property="txtPassword" destination="XVi-zm-Gew" id="qRK-Cu-73h"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-Dm-DFq" userLabel="CreateAccountBtm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -631,9 +625,6 @@
                     <connections>
                         <outlet property="accCreateTableView" destination="bq3-ay-vkE" id="vev-L9-iIV"/>
                         <outlet property="tableView" destination="bq3-ay-vkE" id="hn5-r2-a51"/>
-                        <outlet property="txtEmail" destination="Nvx-BC-C2x" id="vEL-FT-kcl"/>
-                        <outlet property="txtName" destination="iHB-WO-Whp" id="Qn4-Vx-wuQ"/>
-                        <outlet property="txtPassword" destination="XVi-zm-Gew" id="mti-jO-f0K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsO-o7-POD" userLabel="First Responder" sceneMemberID="firstResponder"/>

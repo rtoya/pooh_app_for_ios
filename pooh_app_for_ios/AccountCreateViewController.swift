@@ -4,16 +4,13 @@ import UIKit
 class AccountCreate: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var txtName: UITextField!
-    @IBOutlet var txtEmail: UITextField!
-    @IBOutlet var txtPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
+        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
         
-        //        tableView.dataSource = self
-        //        tableView.delegate = self
+                tableView.dataSource = self
+                tableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,8 +21,7 @@ class AccountCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellName: String
         
-        println(indexPath.row)
-        
+        // cellNameの宣言
         switch indexPath.row {
         case 0:
             cellName = "nickNameCell"
@@ -38,6 +34,19 @@ class AccountCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         
         var cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath) as UITableViewCell
+    
+        // txtFieldの宣言
+        switch indexPath.row {
+        case 0:
+            let nameTxt = cell.viewWithTag(1) as UITextField
+        case 1:
+            let txtEmail = cell.viewWithTag(1) as UITextField
+        case 2:
+            var txtPassword = cell.viewWithTag(1) as UITextField
+        default:
+            let txtField = cell.viewWithTag(1) as UITextField
+        }
+        
         return cell
         
     }
@@ -61,14 +70,19 @@ class AccountCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBAction func createUserTapped(sender: AnyObject) {
         // 未入力処理
-        if(txtName==""){ return }
+/*        if(txtName==""){ return }
         if(txtEmail==""){ return }
         if(txtPassword==""){ return }
+*/
         
         // 登録フォームの値を修正（toJSON）
         let loginData:[String:AnyObject] = [
+            "email": "mshbmmsmsm.u.yauya.da.yo.n@gmail.com",
+            "password": "password"
+            /*
             "email": txtEmail.text,
             "password": txtPassword.text
+            */
         ]
         let jsonString = JSON(loginData).toString()
         

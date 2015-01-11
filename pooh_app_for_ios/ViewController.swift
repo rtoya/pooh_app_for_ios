@@ -4,7 +4,7 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

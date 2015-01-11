@@ -11,6 +11,14 @@ class AccountCreateViewController: UIViewController, UITableViewDelegate, UITabl
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        self.tableView.estimatedRowHeight = 46
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,11 +69,26 @@ class AccountCreateViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
         // do nothing
-        
     }
     
     func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 30
+        return 48
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+    }
+    
+    func keyboardDidShow(notification: NSNotification) {
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+    }
+    
+    func keyboardDidHide(notification: NSNotification) {
+        
     }
     
     @IBAction func createUserTapped(sender: AnyObject) {

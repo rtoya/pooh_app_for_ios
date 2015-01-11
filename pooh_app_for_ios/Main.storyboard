@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hcq-Pa-Kri">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment version="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hcq-Pa-Kri" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="CQ8-TB-N6T"/>
+                                    <segue destination="Hcq-Pa-Kri" kind="modal" identifier="AccountCreateViewController" id="CQ8-TB-N6T"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_ttl.png" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-gw-5r5">
@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="-894" y="-179"/>
         </scene>
-        <!--Account Create-->
+        <!--Account Create View Controller-->
         <scene sceneID="GA2-iy-lNL">
             <objects>
-                <viewController storyboardIdentifier="regist" id="Hcq-Pa-Kri" customClass="AccountCreate" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="regist" id="Hcq-Pa-Kri" customClass="AccountCreateViewController" customModule="pooh_app_for_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xWY-X6-EMR"/>
                         <viewControllerLayoutGuide type="bottom" id="AkN-k3-xVz"/>
@@ -321,7 +321,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bq3-ay-vkE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="accountCreateTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bq3-ay-vkE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -379,9 +379,6 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="txtName" destination="iHB-WO-Whp" id="T07-Kx-LLA"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="mailCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="mailCell" rowHeight="40" id="ll0-sm-krY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -436,11 +433,8 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="txtEmail" destination="Nvx-BC-C2x" id="IbD-62-B8t"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="passCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" rowHeight="40" id="B9l-yv-DUd">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="passwordCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" rowHeight="40" id="B9l-yv-DUd">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9l-yv-DUd" id="w2E-Pt-QBs">
@@ -495,6 +489,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="290" width="368" height="141"/>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-Dm-DFq" userLabel="CreateAccountBtm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -621,8 +618,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="1CW-Z5-5ik"/>
                     <connections>
-                        <outlet property="accCreateTableView" destination="bq3-ay-vkE" id="vev-L9-iIV"/>
                         <outlet property="tableView" destination="bq3-ay-vkE" id="hn5-r2-a51"/>
                     </connections>
                 </viewController>
@@ -2236,31 +2233,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J6-4E-Icf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.5" y="-178"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Pcm-wU-yaA">
-            <objects>
-                <tableViewController id="GZk-WM-ODj" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4co-CB-Nba">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rld-b5-7Ck">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rld-b5-7Ck" id="b6h-Pp-PfU">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="GZk-WM-ODj" id="dmu-J7-RYo"/>
-                            <outlet property="delegate" destination="GZk-WM-ODj" id="KoQ-Mt-tZz"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cae-U6-xcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

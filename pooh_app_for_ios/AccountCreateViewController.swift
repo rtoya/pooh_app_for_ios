@@ -1,16 +1,16 @@
 import UIKit
 
 // アカウント登録
-class AccountCreate: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AccountCreateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
+        //super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
         
-                tableView.dataSource = self
-                tableView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {

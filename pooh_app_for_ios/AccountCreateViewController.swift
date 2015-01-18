@@ -5,6 +5,8 @@ class AccountCreateViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
+    var app:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate) // host名をglobal変数から呼び出す
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //super.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/background.png")!)
@@ -76,7 +78,7 @@ class AccountCreateViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        
+ 
     }
     
     func keyboardDidShow(notification: NSNotification) {
@@ -110,7 +112,7 @@ class AccountCreateViewController: UIViewController, UITableViewDelegate, UITabl
         let jsonString = JSON(loginData).toString()
         
         // post処理
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/create")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        var request = NSMutableURLRequest(URL: NSURL(string: "\(app._host)/user/create")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         var response: NSURLResponse?
         var error: NSError?
         

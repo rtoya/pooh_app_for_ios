@@ -5,12 +5,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+//    var _host:NSString = "https://stormy-island-5344.herokuapp.com"
     var _host:NSString = "http://localhost:3000"
+
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //Override point for customization after application launch.  
         //self.window?.rootViewController = ViewController(nibName: "ViewController", bundle: nil)
-        
+
         return true
 
     }
@@ -36,6 +38,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
